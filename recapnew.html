@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Recap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<style>
+body{ background: linear-gradient(45deg, white, #D1E4C4, white);}
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:50px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:140px;
+  height: 80px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+.buttons:hover{
+background-color:#F1F7ED;
+color:black;
+box-shadow: 5px 0px 7px black;
+}
+.buttons:active{
+opacity: 0.7;
+}
+.tooltips{
+ position:relative;
+ display:block;
+ text-align:center;
+ font-size:70px;
+ font-weight:bold;
+ cursor:pointer;
+ 
+}
+.tooltips .tooltipstext{
+ visibility:hidden;
+ position:absolute;
+ z-index:1;
+ left:100px;
+ width:1100px;
+ top:125%;
+ background: #F1F7ED;
+ font-size:40px;
+ font-weight:normal;
+ padding: 5px;
+ border-radius: 6px;
+ box-shadow: 5px 0px 7px black;
+ 
+}
+.tooltips:hover .tooltipstext{  visibility: visible;}
+
+
+.dropdown{ display: flex;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: flex; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+   position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:flex;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+.container2{ display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items:center; padding-right:30px;}
+
+
+
+.container{
+ width:100%;
+ display:grid;
+ height: 230vh;
+ grid-template-columns: 1fr ;
+ grid-template-rows: .2fr .3fr 1.2fr .8fr;
+ grid-template-areas: "nav " " sidebar" 
+                      "main" 
+                      "footer";
+ grid-gap:0.2rem;
+}
+nav{ grid-area: nav; display: grid;}
+main{ grid-area: main;display: grid; grid-template-columns:1fr 1fr; cursor:pointer;}
+#sidebar{ grid-area: sidebar;display: grid;}
+#content1{background: lightblue; grid-area: content1;}
+#content2{background: lightblue; grid-area: content2;}
+#content3{background: lightpink; grid-area: content3;}
+footer{ grid-area: footer;display: grid;}
+
+@media only screen and (max-width: 1000px){
+
+main{display:grid; grid-template-columns: 1fr; }
+
+#image{display:none;}
+
+.next{font-size:20px;}
+
+
+
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:28px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:80px;
+  height: 60px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+
+
+
+.dropdown{ display: inline-block;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: block; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+  z-index: 2;
+  position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:block;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+
+
+
+.tooltips{
+ font-size:50px;
+ position: relative;
+ display:inline-block;
+}
+.tooltips .tooltipstext{
+ display: none;
+ position:absolute;
+ z-index: 1;
+ left:0%;
+ bottom:100%;
+ border-radius: 4px;
+ background:#F1F7ED;
+ box-shadow: 5px 0px 7px black;
+ width:530px;
+ text-align: center;
+}
+.tooltips:hover .tooltipstext{ display: none;}
+
+ .container{
+   width:100%;
+   height: 210vh;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1fr;
+   grid-template-areas: "nav" "sidebar" "main" 
+                      "content1" "content2" "content3"
+                      "footer";
+ }
+}
+</style>
+<body>
+<div class="container">
+
+ <nav><div class="dropdown">
+ <button>Lessons</button>
+ <div class="content">
+  <a href="lesson1.html" target="_blank">Lesson 1</a>
+  <a href="lesson2.html" target="_blank">Lesson 2</a>
+  <a href="lesson3.html" target="_blank">Lesson 3</a>
+  <a href="lesson4.html" target="_blank">Lesson 4</a>
+  <a href="lesson5.html" target="_blank">Lesson 5</a>
+  <a href="lesson6.html" target="_blank">Lesson 6</a>
+  <a href="lesson7.html" target="_blank">Lesson 7</a>
+  <a href="lesson8.html" target="_blank">Lesson 8</a>
+  <a href="lesson9.html" target="_blank">Lesson 9</a>
+  <a href="lesson10.html" target="_blank">Lesson 10</a>
+  <a href="lesson11.html" target="_blank">Lesson 11</a>
+  <a href="lesson12.html" target="_blank">Lesson 12</a>
+  <a href="lesson13.html" target="_blank">Lesson 13</a>
+ </div>
+</div></nav>
+
+<div id="sidebar"><h1 class="tooltips"> Recap of Key Nouraniah Rules and Concepts <span class="tooltipstext">Throughout this course, you've learned various rules and concepts essential for mastering Arabic reading with the Nouraniah method. Here's a recap of the key rules and concepts covered:
+</span></h1>
+</div>
+
+<main>
+
+<div style="padding-left:20px; padding-top:70px;"><img src="lesson preview.jpg" style="height:900px; " id="image"></div>
+
+<div style=" padding-left: 10px;">
+
+<h2 style="text-align:center;">1. Arabic Alphabet:</h2>
+<ul style="font-size:20px;"> 
+ <li>You've been introduced to the Arabic alphabet, consisting of 28 letters, each with its own unique sound and form.</li>
+ <li>Understanding the Arabic alphabet is fundamental for reading and writing in Arabic.</li>
+</ul>
+
+<h2 style="text-align:center;">2. Short Vowels:</h2>
+<ul style="font-size:20px;"> 
+ <li>Short vowels, also known as Harakat, include Fat'ha, Dhamma, and Kasra, representing the sounds "a," "u," and "i" respectively.</li>
+ <li>These vowels are used to indicate the short vowel sounds in Arabic words.</li>
+</ul>
+
+<h2 style="text-align:center;">3. Long Vowels:</h2>
+<ul style="font-size:20px;"> 
+ <li>Long vowels in Arabic include Alif, Ya, and Waw, representing elongated vowel sounds.</li>
+ <li>These letters are used to indicate the elongation of vowel sounds in Arabic words.</li>
+</ul>
+
+<h2 style="text-align:center;">4. Tanween and Sukoon:</h2>
+<ul style="font-size:20px;"> 
+ <li>Tanween refers to the double vowel sound added at the end of a noun to indicate indefiniteness.</li>
+ <li>Sukoon represents the absence of any vowel sound on a consonant, indicating a stop or pause in pronunciation.</li>
+</ul>
+
+<h2 style="text-align:center;">5. Shaddah and Madda (Prolongation):</h2>
+<ul style="font-size:20px;"> 
+ <li>Shaddah is a diacritical mark used to double a consonant's sound, indicating emphasis or stress on the consonant.</li>
+ <li>Madda represents the elongation of a vowel sound by adding a supporting letter, usually Alif, at the beginning of a word.</li>
+</ul>
+
+<h2 style="text-align:center;">7. Sun and Moon Letters:</h2>
+<ul style="font-size:20px;"> 
+ <li>Sun letters (Al-Huruf Ash-Shamsiyyah) and moon letters (Al-Huruf Al-Qamariyyah) determine the pronunciation of the letters that follow them in Arabic words.</li>
+ <li>Understanding sun and moon letters is crucial for correct pronunciation and reading in Arabic.</li>
+</ul>
+</div>
+</div>
+</main>
+
+
+
+
+
+<footer><div style="display: grid;
+grid-template-columns: 1fr 1fr;">
+<div>
+<p style="text-align:left; padding: 30px; font-size: 30px; 
+"><a style="text-decoration: none; color:black;" target="_blank" href="lesson13practicenew.html"><span class="next">&#8592; Previous </span></a>
+</div>
+<div>
+<p style="text-align:right; padding: 30px; font-size: 30px; hover:
+"><a style="text-decoration: none; color:black;" target="_blank" href="finalassessmentnew.html"> <span class="next">Final Assessment &#8594;</span></a>
+</div>
+</div></footer>
+</div>
+
+
+<script>                         </script>
+</body>
+</html>
