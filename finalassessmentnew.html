@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Final Assessment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<style>
+body{ background: linear-gradient(45deg, white, #D1E4C4, white);}
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:50px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:140px;
+  height: 80px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+.buttons:hover{
+background-color:#F1F7ED;
+color:black;
+box-shadow: 5px 0px 7px black;
+}
+.buttons:active{
+opacity: 0.7;
+}
+.tooltips{
+ position:relative;
+ display:block;
+ text-align:center;
+ font-size:70px;
+ font-weight:bold;
+ cursor:pointer;
+ 
+}
+.tooltips .tooltipstext{
+ visibility:hidden;
+ position:absolute;
+ z-index:1;
+ left:100px;
+ width:1100px;
+ top:125%;
+ background: #F1F7ED;
+ font-size:40px;
+ font-weight:normal;
+ padding: 5px;
+ border-radius: 6px;
+ box-shadow: 5px 0px 7px black;
+ 
+}
+.tooltips:hover .tooltipstext{  visibility: visible;}
+
+
+.dropdown{ display: flex;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: flex; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+   position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:flex;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+.container2{ display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items:center; padding-right:30px;}
+
+
+
+.container{
+ width:100%;
+ display:grid;
+ height: 600vh;
+ grid-template-columns: 1fr ;
+ grid-template-rows: .2fr .3fr 1.2fr .8fr;
+ grid-template-areas: "nav " " sidebar" 
+                      "main" 
+                      "footer";
+ grid-gap:0.2rem;
+}
+nav{ grid-area: nav; display: grid;}
+main{ grid-area: main;display: grid; grid-template-columns: 1fr; cursor:pointer;}
+#sidebar{ grid-area: sidebar;display: grid;}
+#content1{background: lightblue; grid-area: content1;}
+#content2{background: lightblue; grid-area: content2;}
+#content3{background: lightpink; grid-area: content3;}
+footer{ grid-area: footer;display: grid;}
+
+@media only screen and (max-width: 1000px){
+
+.btn{width:300px;}
+
+
+
+.next{font-size:20px;}
+
+
+
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:28px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:80px;
+  height: 60px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+
+
+
+.dropdown{ display: inline-block;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: block; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+  z-index: 2;
+  position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:block;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+
+
+
+.tooltips{
+ font-size: 50px;
+ position: relative;
+ display:inline-block;
+}
+.tooltips .tooltipstext{
+ display: none;
+ position:absolute;
+ z-index: 1;
+ left:0%;
+ bottom:100%;
+ border-radius: 4px;
+ background:#F1F7ED;
+ box-shadow: 5px 0px 7px black;
+ width:530px;
+ text-align: center;
+}
+.tooltips:hover .tooltipstext{ display: none;}
+
+ .container{
+   width:100%;
+   height: 210vh;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1fr;
+   grid-template-areas: "nav" "sidebar" "main" 
+                      "content1" "content2" "content3"
+                      "footer";
+ }
+}
+</style>
+<body>
+<div class="container">
+
+ <nav><div class="dropdown">
+ <button>Lessons</button>
+ <div class="content">
+  <a href="lesson1.html" target="_blank">Lesson 1</a>
+  <a href="lesson2.html" target="_blank">Lesson 2</a>
+  <a href="lesson3.html" target="_blank">Lesson 3</a>
+  <a href="lesson4.html" target="_blank">Lesson 4</a>
+  <a href="lesson5.html" target="_blank">Lesson 5</a>
+  <a href="lesson6.html" target="_blank">Lesson 6</a>
+  <a href="lesson7.html" target="_blank">Lesson 7</a>
+  <a href="lesson8.html" target="_blank">Lesson 8</a>
+  <a href="lesson9.html" target="_blank">Lesson 9</a>
+  <a href="lesson10.html" target="_blank">Lesson 10</a>
+  <a href="lesson11.html" target="_blank">Lesson 11</a>
+  <a href="lesson12.html" target="_blank">Lesson 12</a>
+  <a href="lesson13.html" target="_blank">Lesson 13</a>
+ </div>
+</div></nav>
+
+<div id="sidebar"><h1 class="tooltips"> Assessment: Proficiency in Nouraniah Reading and Pronunciation <span class="tooltipstext">This assessment is designed to evaluate your proficiency in Nouraniah reading and pronunciation.
+</span></h1></div>
+
+<main>
+
+
+<div style=" padding-left: 10px;  ">
+
+<button style="background:#D1E4C4; font-size: 40px; padding-right:30px; border:none; border-radius: 6px; box-shadow: 5px 0px 7px black; text-align:right; width: 1200px; margin-left: 50px; cursor:pointer; padding-right:30px; margin-bottom:30px; class="btn"
+">
+<h2 style="font-size: 35px; text-align:center;">Section 1: Reading Fluency</h2>
+
+<ul style="font-size:25px; text-align: left;">
+ <li><b>Task 1:</b> Read the following passage aloud:</li> 
+ <li>Focus on proper pronunciation, fluency, and intonation.</li>
+ <li>Take your time and read each word carefully.</li>
+</ul>
+
+<ul>
+<li> قُلۡ هُوَ ٱللَّهُ أَحَدٌ</li><br>
+ <li> ٱللَّهُ ٱلصَّمَدُ </li><br>
+ <li> لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ </li><br>
+ <li> وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُ</li>
+</ul></button>
+
+</div>
+
+
+<div style=" padding-left: 10px; ">
+
+
+<button style="background:#D1E4C4; font-size: 40px; border:none; border-radius: 6px; box-shadow: 5px 0px 7px black; text-align:right; width: 1200px; margin-left: 50px; padding-right:30px; cursor:pointer;margin-bottom:30px; class="btn"
+">
+<h2 style="font-size: 35px; text-align:center;">Section 2: Pronunciation Accuracy</h2>
+ 
+<ul style="font-size:25px; text-align:left;"> 
+ <li><b>Task 2:</b> Pronounce the following words:</li>
+ <li>Pay attention to correct pronunciation of Arabic letters and vowels.</li>
+</ul>
+
+<ul>
+ <li>ٱلشِّتَآءِ  </li><br>
+ <li> أَطْعَمَهُمْ </li><br>
+ <li> ٱلْفَتْحُ  </li><br>
+ <li>  لِنَجْعَلَهَا</li>
+</ul></button>
+
+</div>
+
+
+<div style=" padding-left: 10px; ">
+
+
+<button style="background:#D1E4C4; font-size: 40px;  border:none; border-radius: 6px; box-shadow: 5px 0px 7px black; text-align:right; width: 1200px; margin-left: 50px; padding-right:30px; cursor:pointer; margin-bottom:30px; class="btn"
+">
+<h2 style=" font-size:35px; text-align:center;">Section 3: Application of Nouraniah Rules</h2>
+
+<ul style="font-size:25px; text-align: left;"> 
+ <li><b>Task 3:</b> Identify and explain the following Nouraniah rules:</li>
+ <li>Provide examples to demonstrate your understanding of each rule.</li>
+</ul>
+
+<ul>
+ <li>   Tanween   </li><br>
+ <li>   Sukoon   </li><br>
+ <li>   Shaddah  </li><br>
+ <li>  Madd      </li>
+</ul></button>
+
+</div>
+
+
+<div style=" padding-left: 10px; ">
+
+
+<button style="background:#D1E4C4; font-size: 40px; border:none; border-radius: 6px; box-shadow: 5px 0px 7px black; text-align:right; width: 1200px; margin-left: 50px; padding-right:30px; cursor:pointer;margin-bottom:30px; class="btn"
+">
+<h2 style="font-size:35px; text-align:center; ">Section 4: Sun and Moon Letters</h2>
+
+<ul style="font-size:25px; text-align: left;">
+ <li> <b>Task 4:</b> Classify the following letters as Sun or Moon letters:</li>
+ <li>Explain the basis for your classification.</li>
+</ul>
+
+<ul>
+<li>   ٱلصَّمَدُ   </li><br>
+ <li>   ٱلۡفَلَقِ   </li><br>
+ <li>   ٱلۡعُقَدِ  </li><br>
+ <li>  ٱلنَّاسِ      </li>
+</ul></button>
+
+</div>
+
+
+<div style=" padding-left: 10px; ">
+
+
+<button style="background:#D1E4C4; font-size: 40px; 
+ border:none; border-radius: 6px; box-shadow: 5px 0px 7px black; text-align:right; width: 1200px; margin-left: 50px; padding-right:30px; cursor:pointer;margin-bottom:30px; class="btn"
+">
+
+<h2 style="text-align:center; font-size:35px; ">Section 5: Comprehensive Reading and Pronunciation</h2>
+
+<ul style="font-size:25px; text-align:left;"> 
+ <li><b>Task 5:</b> Read the provided passage aloud and answer the comprehension questions:</li>
+ <li>After reading, answer the following questions based on the passage:</li>
+</ul>
+
+<ul>
+ <li>   إِذَا جَآءَ نَصۡرُ ٱللَّهِ وَٱلۡفَتۡحُ   </li><br>
+ <li>   وَرَأَيۡتَ ٱلنَّاسَ يَدۡخُلُونَ فِي دِينِ ٱللَّهِ أَفۡوَاجَا   </li><br>
+ <li>   فَسَبِّحۡ بِحَمۡدِ رَبِّكَ وَٱسۡتَغۡفِرۡهُ إِنَّهُ كَانَ تَوَّابَا  </li><br>
+</ul> 
+<ol style="font-size:25px; text-align: left;">
+ <li> What is the main idea of the passage?</li>
+ <li> Can you identify any Nouraniah rules or concepts demonstrated in the passage?</li>
+ <li> Can you identify any Nouraniah rules or concepts demonstrated in the passage?</li>
+</ol>
+</button>
+
+
+
+</div>
+
+
+<div style=" padding-left: 10px;">
+
+<button style="background:#D1E4C4; 
+ border:none; border-radius: 6px; box-shadow: 5px 0px 7px black; text-align:right; width: 1200px; margin-left: 50px; padding-right:30px; cursor:pointer; margin-bottom:30px; class="btn">
+
+<h2 style="text-align:center; font-size:35px;">Section 6: Self-Reflection</h2>
+
+<ul style="font-size:25px; text-align:left;"> 
+ <li><b>Task 6:</b> Reflect on your performance in the assessment:</li>
+ <li>What areas do you feel confident in?</li>
+ <li>Are there any areas where you struggled or need further practice?</li>
+<li>How do you plan to improve your Nouraniah reading and pronunciation skills moving forward?</li>
+</ul>
+</button>
+</div>
+
+
+<h2 style="text-align:center;">This assessment evaluates Nouraniah reading and pronunciation, covering fluency, accuracy, rule application, and comprehension.<br> Take your time and refer to your materials as needed.
+</h2>  </main>
+
+
+
+
+
+<footer><div style="display: grid;
+grid-template-columns: 1fr 1fr;">
+<div>
+<p style="text-align:left; padding: 30px; font-size: 30px; 
+"><a style="text-decoration: none; color:black;" target="_blank" href="recapnew.html"><span class="next">&#8592; Recap </span></a>
+</div>
+<div>
+<p style="text-align:right; padding: 30px; font-size: 30px; hover:
+"><a style="text-decoration: none; color:black;" target="_blank" href="#"> <span class="next"></span></a>
+</div>
+</div></footer>
+</div>
+
+
+<script>                         </script>
+</body>
+</html>
