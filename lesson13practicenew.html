@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lesson 13 practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<style>
+body{ background: linear-gradient(45deg, white, #D1E4C4, white);}
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        background-color: #D1E4C4;
+        color: black ;
+        font-size:50px;
+        width: 200px;
+        padding: 5px;
+        border-radius: 6px;
+        margin-left:55px;
+        margin-bottom:55px;
+        border:none;
+        box-shadow: 5px 0px 7px black;
+    }
+    
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 190px;
+        background-color: #F1F7ED;
+        color: black;
+        box-shadow: 5px 0px 7px black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        top: 125%;
+        left: 30%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size:50px;
+    }
+    .tooltip:hover  .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:50px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:140px;
+  height: 80px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+.buttons:hover{
+background-color:#F1F7ED;
+color:black;
+box-shadow: 5px 0px 7px black;
+}
+.buttons:active{
+opacity: 0.7;
+}
+.tooltips{
+ position:relative;
+ display:block;
+ text-align:center;
+ font-size:70px;
+ font-weight:bold;
+ cursor:pointer;
+ 
+}
+.tooltips .tooltipstext{
+ visibility:hidden;
+ position:absolute;
+ z-index:1;
+ left:100px;
+ width:1100px;
+ top:125%;
+ background: #F1F7ED;
+ font-size:40px;
+ font-weight:normal;
+ padding: 5px;
+ border-radius: 6px;
+ box-shadow: 5px 0px 7px black;
+ 
+}
+.tooltips:hover .tooltipstext{  visibility: visible;}
+
+
+.dropdown{ display: flex;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: flex; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+   position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:flex;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+.container2{ display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items:center; padding-right:30px;}
+
+
+
+.container{
+ width:100%;
+ display:grid;
+ height: 130vh;
+ grid-template-columns: 1fr ;
+ grid-template-rows: .2fr .3fr 1.2fr .8fr;
+ grid-template-areas: "nav " " sidebar" 
+                      "main" 
+                      "footer";
+ grid-gap:0.2rem;
+}
+nav{ grid-area: nav; display: grid;}
+main{ grid-area: main;display: grid;}
+#sidebar{ grid-area: sidebar;display: grid;}
+#content1{background: lightblue; grid-area: content1;}
+#content2{background: lightblue; grid-area: content2;}
+#content3{background: lightpink; grid-area: content3;}
+footer{ grid-area: footer;display: grid;}
+
+@media only screen and (max-width: 1000px){
+
+
+.next{font-size:20px;}
+
+
+
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:28px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:80px;
+  height: 60px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+
+
+
+.dropdown{ display: inline-block;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: block; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+  z-index: 2;
+  position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:block;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+
+
+
+.tooltips{
+ font-size:50px;
+ position: relative;
+ display:inline-block;
+}
+.tooltips .tooltipstext{
+ display: none;
+ position:absolute;
+ z-index: 1;
+ left:0%;
+ bottom:100%;
+ border-radius: 4px;
+ background:#F1F7ED;
+ box-shadow: 5px 0px 7px black;
+ width:530px;
+ text-align: center;
+}
+.tooltips:hover .tooltipstext{ display: none;}
+
+ .container{
+   width:100%;
+   height: 210vh;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1fr;
+   grid-template-areas: "nav" "sidebar" "main" 
+                      "content1" "content2" "content3"
+                      "footer";
+ }
+}
+</style>
+<body>
+<div class="container">
+
+ <nav><div class="dropdown">
+ <button>Lessons</button>
+ <div class="content">
+  <a href="lesson1new.html" target="_blank">Lesson 1</a>
+  <a href="lesson2new.html" target="_blank">Lesson 2</a>
+  <a href="lesson3new.html" target="_blank">Lesson 3</a>
+  <a href="lesson4new.html" target="_blank">Lesson 4</a>
+  <a href="lesson5new.html" target="_blank">Lesson 5</a>
+  <a href="lesson6new.html" target="_blank">Lesson 6</a>
+  <a href="lesson7new.html" target="_blank">Lesson 7</a>
+  <a href="lesson8new.html" target="_blank">Lesson 8</a>
+  <a href="lesson9new.html" target="_blank">Lesson 9</a>
+  <a href="lesson10new.html" target="_blank">Lesson 10</a>
+  <a href="lesson11new.html" target="_blank">Lesson 11</a>
+  <a href="lesson12new.html" target="_blank">Lesson 12</a>
+  <a href="lesson13new.html" target="_blank">Lesson 13</a>
+ </div>
+</div></nav>
+
+<div id="sidebar"><h1 class="tooltips"> Sun and Moon letters Practice <span class="tooltipstext">Here are some exercises for you to practice recognizing Sun letters and Moon letters.
+</span></h1></div>
+
+
+
+<main><div class="container2"> <button class="tooltip">الْقَمَرْ
+    <span class="tooltiptext">ا لْ قَ مَ رْ</span>
+</button>
+
+<button class="tooltip">النَّهَارِ
+    <span class="tooltiptext">ا ل نَّ هَ ا رِ</span>
+</button>
+
+
+<button class="tooltip">الْمُلْكُ
+    <span class="tooltiptext">ا لْ مُ لْ كُ</span>
+</button>
+
+<button class="tooltip">اللَّيْلِ
+    <span class="tooltiptext">ا ل لَّ يْ لِ</span>
+</button>
+
+<button class="tooltip">الْبُنِّ
+    <span class="tooltiptext">ا لْ بُ نِّ </span>
+</button>
+
+<button class="tooltip">الرَّمْزُ
+    <span class="tooltiptext">ا ل رَّ مْ زُ</span>
+</button>
+
+<button class="tooltip">الْحَقُّ
+    <span class="tooltiptext">ا لْ حَ قُّ</span>
+</button>
+
+<button class="tooltip">التِّينْ
+    <span class="tooltiptext">ا ل تِّ ي نْ</span>
+</button>
+
+<button class="tooltip">الْأَوَّلُ
+    <span class="tooltiptext">ا لْ أَ وَّ لُ</span>
+</button>
+
+<button class="tooltip">الثَّمْرَةٌ
+    <span class="tooltiptext">ال ثَّ مْ رَ ةٌ</span>
+</button>
+
+<button class="tooltip">الْجَمَلُ
+    <span class="tooltiptext">ا لْ جَ مَ لُ  </span>
+</button>
+
+<button class="tooltip">الزَّمَنْ
+    <span class="tooltiptext">ا ل زَّ مَ نْ</span>
+</button>
+
+<button class="tooltip"> الْخَيْلْ
+
+    <span class="tooltiptext">ا  لْ خَ يْ لْ</span>
+</button>
+
+<button class="tooltip"> الضَّهْرُ
+    <span class="tooltiptext">ا ل ضَّ هْ رُ</span>
+</button>
+
+<button class="tooltip"> الْوِرْدُ
+    <span class="tooltiptext"> ا لْ  وِ رْ دُ </span>
+</button>
+
+
+
+  </div></main>
+
+
+
+
+<footer><div style="display: grid;
+grid-template-columns: 1fr 1fr;">
+<div>
+<p style="text-align:left; padding: 30px; font-size: 30px; 
+"><a style="text-decoration: none; color:black;" target="_blank" href="lesson13new.html"><span class="next">&#8592; Previous </span></a>
+</div>
+<div>
+<p style="text-align:right; padding: 30px; font-size: 30px; hover:
+"><a style="text-decoration: none; color:black;" target="_blank" href="recapnew.html"> <span class="next">Recap  &#8594;</span></a>
+</div>
+</div></footer>
+</div>
+
+
+<script>                         </script>
+</body>
+</html>

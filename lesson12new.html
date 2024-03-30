@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lesson 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<style>
+body{ background: linear-gradient(45deg, white, #D1E4C4, white);}
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:50px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:140px;
+  height: 80px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+.buttons:hover{
+background-color:#F1F7ED;
+color:black;
+box-shadow: 5px 0px 7px black;
+}
+.buttons:active{
+opacity: 0.7;
+}
+.tooltips{
+ margin-bottom:0px;
+ position:relative;
+ display:block;
+ text-align:center;
+ font-size:70px;
+ font-weight:bold;
+ cursor:pointer;
+ 
+}
+.tooltips .tooltipstext{
+ visibility:hidden;
+ position:absolute;
+ z-index:1;
+ left:100px;
+ width:1100px;
+ top:50%;
+ background: #F1F7ED;
+ font-size:40px;
+ font-weight:normal;
+ padding: 5px;
+ border-radius: 6px;
+ box-shadow: 5px 0px 7px black;
+ 
+}
+.tooltips:hover .tooltipstext{  visibility: visible;}
+
+
+.dropdown{ display: flex;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: flex; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+   position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:flex;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+.container2{ display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items:center; padding-right:30px;}
+
+
+
+.container{
+ width:100%;
+ display:grid;
+ height: 130vh;
+ grid-template-columns: 1fr ;
+ grid-template-rows: .2fr .3fr 1.2fr .8fr;
+ grid-template-areas: "nav " " sidebar" 
+                      "main" 
+                      "footer";
+ grid-gap:0.2rem;
+}
+nav{ grid-area: nav; display: grid;}
+main{ grid-area: main;display: grid;}
+#sidebar{ grid-area: sidebar;display: grid;}
+#content1{background: lightblue; grid-area: content1;}
+#content2{background: lightblue; grid-area: content2;}
+#content3{background: lightpink; grid-area: content3;}
+footer{ grid-area: footer;display: grid;}
+
+@media only screen and (max-width: 1000px){
+
+.p{font-size: 50px;}
+.next{font-size:20px;}
+
+
+
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:28px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:90px;
+  height: 60px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  
+}
+
+
+
+.dropdown{ display: inline-block;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: block; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+  z-index: 2;
+  position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:block;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+
+
+
+.tooltips{
+ margin-bottom:0px;
+ margin-top:0px;
+ font-size: 30px;
+ position: relative;
+ display:inline-block;
+}
+.tooltips .tooltipstext{
+ display: none;
+ position:absolute;
+ z-index: 1;
+ left:0%;
+ bottom:100%;
+ border-radius: 4px;
+ background:#F1F7ED;
+ box-shadow: 5px 0px 7px black;
+ width:530px;
+ text-align: center;
+}
+.tooltips:hover .tooltipstext{ display: none;}
+
+ .container{
+   width:100%;
+   height: 210vh;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1fr;
+   grid-template-areas: "nav" "sidebar" "main" 
+                      "content1" "content2" "content3"
+                      "footer";
+ }
+}
+</style>
+<body>
+<div class="container">
+
+ <nav><div class="dropdown">
+ <button>Lessons</button>
+ <div class="content">
+  <a href="lesson1new.html" target="_blank">Lesson 1</a>
+  <a href="lesson2new.html" target="_blank">Lesson 2</a>
+  <a href="lesson3new.html" target="_blank">Lesson 3</a>
+  <a href="lesson4new.html" target="_blank">Lesson 4</a>
+  <a href="lesson5new.html" target="_blank">Lesson 5</a>
+  <a href="lesson6new.html" target="_blank">Lesson 6</a>
+  <a href="lesson7new.html" target="_blank">Lesson 7</a>
+  <a href="lesson8new.html" target="_blank">Lesson 8</a>
+  <a href="lesson9new.html" target="_blank">Lesson 9</a>
+  <a href="lesson10new.html" target="_blank">Lesson 10</a>
+  <a href="lesson11new.html" target="_blank">Lesson 11</a>
+  <a href="lesson12new.html" target="_blank">Lesson 12</a>
+  <a href="lesson13new.html" target="_blank">Lesson 13</a>
+ </div>
+</div></nav>
+
+
+<div id="sidebar"><h1 class="tooltips"> Compulsory Lengthening <br><p class="p">  ۤ  </p><span class="tooltipstext">Refers to specific instances where certain letters or vowels are pronounced for an extended duration, irrespective of the standard rules of pronunciation.<br> This elongation is mandatory and occurs in accordance with the rules of Tajweed, the set of rules governing the proper recitation of the Qur'aan. 
+</span></h1></div>
+
+
+
+<main><div class="container2"> <button class="buttons" onmousedown="sound2.play()"> الٓمٓ </button>
+<script>
+ var sound2 = new Audio();
+ sound2.src = "alif lam mim.mp3";
+</script>
+
+<button class="buttons" onmousedown="sound3.play()"> كٓهيعٓصٓ </button>
+<script>
+ var sound3 = new Audio();
+ sound3.src = "kaf haa yaa.mp3";
+</script>
+
+<button class="buttons" onmousedown="sound4.play()"> طسٓمٓ </button>
+<script>
+ var sound4 = new Audio();
+ sound4.src = "twaa seen mim.mp3";
+</script>
+
+<button class="buttons" onmousedown="sound5.play()"> حمٓ </button>
+<script>
+ var sound5 = new Audio();
+ sound5.src = "haa mim.mp3";
+</script>
+
+<button class="buttons" onmousedown="sound6.play()"> عٓسٓقٓ</button>
+<script>
+ var sound6 = new Audio();
+ sound6.src = "aiin seen qaaf.mp3";
+</script>
+
+<button class="buttons" onmousedown="sound7.play()"> قٓ </button>
+<script>
+ var sound7 = new Audio();
+ sound7.src = "qaaf.mp3";
+</script>
+
+<button class="buttons" onmousedown="sound8.play()"> صٓ </button>
+<script>
+ var sound8 = new Audio();
+ sound8.src = "saad.mp3";
+</script>
+
+<button class="buttons" onmousedown="sound9.play()"> نٓ </button>
+<script>
+ var sound9 = new Audio();
+ sound9.src = "noun.mp3";
+</script>  </div></main>
+
+
+
+
+
+<footer><div style="display: grid;
+grid-template-columns: 1fr 1fr;">
+<div>
+<p style="text-align:left; padding: 30px; font-size: 30px; 
+"><a style="text-decoration: none; color:black;" target="_blank" href="lesson11practicenew.html"><span class="next">&#8592; Previous </span></a>
+</div>
+<div>
+<p style="text-align:right; padding: 30px; font-size: 30px; hover:
+"><a style="text-decoration: none; color:black;" target="_blank" href="lesson12practicenew.html"> <span class="next">Next  &#8594;</span></a>
+</div>
+</div></footer>
+</div>
+
+
+<script>                         </script>
+</body>
+</html>

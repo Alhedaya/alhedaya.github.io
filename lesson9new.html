@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lesson 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<style>
+body{ background: linear-gradient(45deg, white, #D1E4C4, white);}
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:50px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:240px;;
+  height: 140px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  
+}
+.buttons:hover{
+background-color:#F1F7ED;
+color:black;
+box-shadow: 5px 0px 7px black;
+}
+.buttons:active{
+opacity: 0.7;
+}
+.tooltips{
+ position:relative;
+ display:block;
+ text-align:center;
+ font-size:70px;
+ font-weight:bold;
+ cursor:pointer;
+ 
+}
+.tooltips .tooltipstext{
+ visibility:hidden;
+ position:absolute;
+ z-index:1;
+ left:100px;
+ width:1100px;
+ top:125%;
+ background: #F1F7ED;
+ font-size:40px;
+ font-weight:normal;
+ padding: 5px;
+ border-radius: 6px;
+ box-shadow: 5px 0px 7px black;
+ 
+}
+.tooltips:hover .tooltipstext{  visibility: visible;}
+
+
+.dropdown{ display: flex;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px; height: 35px;
+ }
+
+ .dropdown a{
+  display: flex; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+   position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:flex;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+.container2{ display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items:center; padding-right:30px;}
+
+
+
+.container{
+ width:100%;
+ display:grid;
+ height: 270vh;
+ grid-template-columns: 1fr ;
+ grid-template-rows: .2fr .3fr 1.2fr .8fr;
+ grid-template-areas: "nav " " sidebar" 
+                      "main" 
+                      "footer";
+ grid-gap:0.2rem;
+}
+nav{ grid-area: nav; display: grid;}
+main{ grid-area: main;display: grid;}
+#sidebar{ grid-area: sidebar;display: grid;}
+#content1{background: lightblue; grid-area: content1;}
+#content2{background: lightblue; grid-area: content2;}
+#content3{background: lightpink; grid-area: content3;}
+footer{ grid-area: footer;display: grid;}
+
+@media only screen and (max-width: 1100px){
+
+
+.next{font-size:20px;}
+
+
+
+.buttons{
+  background-color:#D1E4C4;
+  color: black; 
+  box-shadow:5px 0px 7px black;
+  border-radius:10px;
+  cursor: pointer;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:50px;
+  transition: background-color 1s;
+  transition: color 1s;
+  width:280px;
+  height: 180px;  
+  border-width: 2px;
+  margin-bottom: 25px;
+  
+  
+}
+
+
+
+.dropdown{ display: inline-block;}
+ .dropdown button{
+  background-color: #D1E4C4; color: black; padding: 10px 30px;
+  border:none; cursor:pointer; box-shadow: 5px 5px 7px black;
+  transition:0.05s; border-radius:4px;
+ }
+
+ .dropdown a{
+  display: block; text-decoration: none; text-align: center; padding: 10px 23px; margin-top:10px; background-color: #D1E4C4;
+  color:black; box-shadow: 5px 5px 7px black; border-radius:4px; margin-left:5px;
+ }
+
+ .dropdown .content{
+  z-index: 2;
+  position: absolute; min-width:100px;
+  display:none;
+ }
+
+ .dropdown:hover .content{ 
+  display:block;
+ }
+ .dropdown:hover button{
+  background-color: #F1F7ED; color:black;
+ }
+ .dropdown a:hover{
+  background-color: #F1F7ED; color:black;
+ }
+
+
+
+.tooltips{
+ position: relative;
+ display:inline-block;
+}
+.tooltips .tooltipstext{
+ display: none;
+ position:absolute;
+ z-index: 1;
+ left:0%;
+ bottom:100%;
+ border-radius: 4px;
+ background:#F1F7ED;
+ box-shadow: 5px 0px 7px black;
+ width:530px;
+ text-align: center;
+}
+.tooltips:hover .tooltipstext{ display: none;}
+
+ .container{
+   width:100%;
+   height: 210vh;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1fr;
+   grid-template-areas: "nav" "sidebar" "main" 
+                      "content1" "content2" "content3"
+                      "footer";
+ }
+}
+</style>
+<body>
+<div class="container">
+
+ <nav><div class="dropdown">
+ <button>Lessons</button>
+ <div class="content">
+  <a href="lesson1new.html" target="_blank">Lesson 1</a>
+  <a href="lesson2new.html" target="_blank">Lesson 2</a>
+  <a href="lesson3new.html" target="_blank">Lesson 3</a>
+  <a href="lesson4new.html" target="_blank">Lesson 4</a>
+  <a href="lesson5new.html" target="_blank">Lesson 5</a>
+  <a href="lesson6new.html" target="_blank">Lesson 6</a>
+  <a href="lesson7new.html" target="_blank">Lesson 7</a>
+  <a href="lesson8new.html" target="_blank">Lesson 8</a>
+  <a href="lesson9new.html" target="_blank">Lesson 9</a>
+  <a href="lesson10new.html" target="_blank">Lesson 10</a>
+  <a href="lesson11new.html" target="_blank">Lesson 11</a>
+  <a href="lesson12new.html" target="_blank">Lesson 12</a>
+  <a href="lesson13new.html" target="_blank">Lesson 13</a>
+ </div>
+</div></nav>
+
+
+<div id="sidebar"><h1 class="tooltips"> Arabic Joining Letters <span class="tooltipstext"> Presented below is a chart illustrating the connectivity patterns of Arabic letters, distinguishing between those connecting in initial, medial, or final positions, and those exclusively connecting at the end.
+</span></h1>
+</div>
+
+
+
+<main><div class="container2"> <button class="buttons">ا<br> ـا  *  * </button>
+<button class="buttons"> ب<br>	بـ ـبـ ـب</button>
+<button class="buttons"> ت<br>  تـ ــتـ ـت</button>
+<button class="buttons">ث<br> ثـ  ـثـ ـث</button>
+<button class="buttons"> ج<br>جـ ـجـ ـج </button>
+<button class="buttons">ح<br> حـ  ـحـ  ـح </button>
+<button class="buttons"> خ<br> خـ  ـخـ  ـخ  </button>
+<button class="buttons">د<br>  ـد * *</button>
+<button class="buttons">ذ<br> ـذ * * </button>
+<button class="buttons"> ر<br> ـر * * </button>
+<button class="buttons"> ز<br> ـز  * *  </button>
+<button class="buttons"> س<br> سـ ـسـ ـس  </button>
+<button class="buttons"> ش<br> شـ  ـشـ  ـش </button>
+<button class="buttons"> ص<br> صـ  ـصـ ـص  </button>
+<button class="buttons"> ض<br> ضـ  ـضـ  ـض  </button>
+<button class="buttons"> ط<br> طـ ـطـ  ـط  </button>
+<button class="buttons"> ظ<br> ظـ  ـظـ   ـظ </button>
+<button class="buttons"> ع<br> عـ  ـعـ   ـع  </button>
+<button class="buttons"> غ<br>   غـ  ـغـ   ـغ  </button>
+<button class="buttons"> ف<br>  فـ  ـفـ   ـف    </button>
+<button class="buttons"> ق<br>  قـ   ـقـ  ـق   </button>
+<button class="buttons"> ك<br> كـ  ـكـ  ـك  </button>
+<button class="buttons"> ل<br>  لـ   ـلـ   ـل   </button>
+<button class="buttons"> م<br>   مـ  ـمـ   ـم  </button>
+<button class="buttons"> ن<br>   نـ   ـنـ  ـن  </button>
+<button class="buttons"> و<br>  ـو  *  *  </button>
+<button class="buttons"> ﻩ<br>  هـ  ـهـ  ـه   </button>
+<button class="buttons"> ة<br>  ـة  *  *  </button>
+<button class="buttons"> ي<br>  يـ   ـيـ  ـي   </button>
+  </div></main>
+
+
+
+
+
+<footer><div style="display: grid;
+grid-template-columns: 1fr 1fr;">
+<div>
+<p style="text-align:left; padding: 30px; font-size: 30px; 
+"><a style="text-decoration: none; color:black;" target="_blank" href="lesson8practicenew.html"><span class="next">&#8592; Previous </span></a>
+</div>
+<div>
+<p style="text-align:right; padding: 30px; font-size: 30px; hover:
+"><a style="text-decoration: none; color:black;" target="_blank" href="lesson9practicenew.html"> <span class="next">Next  &#8594;</span></a>
+</div>
+</div></footer>
+</div>
+
+
+<script>                         </script>
+</body>
+</html>
